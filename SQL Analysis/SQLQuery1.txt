@@ -1,0 +1,43 @@
+/*1.Evaluating Financial Risk by Encounter Outcome
+										Objective:
+Determine which ReasonCodes lead to the highest financial risk based on the total uncovered cost (difference between total claim cost and payer coverage). 
+Analyze this by combining patient demographics and encounter outcomes.*/
+
+select 
+reasoncode,
+sum(total_claim_cost-payer_coverage) as Total_Uncovered_Cost,
+count(patient) as 'No_Of_Patients',
+avg(total_claim_cost-payer_coverage) as Avg_Uncovered_Cost,
+gender ,
+marital,
+description
+from 
+encounters e
+inner join
+patients p
+on e.patient=p.id
+where reasoncode is not null and (total_claim_cost!=0 or payer_coverage!=0)and
+description in (
+'Admission to hospice (procedure)',
+'Admission to intensive care unit (procedure)',
+'Admission to surgical department',
+'Cardiac Arrest',
+'Death Certification',
+'Drug rehabilitation and detoxification',
+'Emergency hospital admission for asthma',
+'Emergency Room Admission',
+'Emergency room admission (procedure)',
+'Follow-up encounter',
+'Follow-up encounter (procedure)',
+'Follow-up visit (procedure)',
+'Hospital admission',
+'Hospital admission for isolation (procedure)',
+'Myocardial Infarction',
+'Non-urgent orthopedic admission',
+'Obstetric emergency hospital admission',
+'Postnatal visit',
+'Postoperative follow-up visit (procedure)',
+'Stroke'
+)
+group by reasoncode,gender,marital,description 
+order by Total_Uncovered_Cost desc
