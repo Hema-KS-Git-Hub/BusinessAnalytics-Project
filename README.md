@@ -15,7 +15,7 @@ SQL:
 						Cost-Conscious Care: Risk Analysis in the Patient Journey 
 	This project focuses on uncovering the financial risks and burdens faced by patients during their healthcare journey, with a particular emphasis on costs not covered by payers.
  						Key Highlights:
-	Designed a relational data model with linked tables to ensure data integrity and consistent relationships between encounters,patients,payers, and procedures.
+	Designed a relational data model with linked tables to ensure data integrity and consistent relationships between organizations,encounters,patients,payers,and procedures.
 	Combined multi-source healthcare datasets to create a unified view of patient encounters and associated costs.
 	Applied targeted filters to identify high-cost cases, such as encounters exceeding $10,000, enabling focused cost-control analysis.
 	Evaluated payer contributions and cost coverage to reveal patterns in financial exposure for patients.
