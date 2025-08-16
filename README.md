@@ -10,7 +10,7 @@ Data Sources
 Tech Stack
 		SQL — Data extraction, transformation, and aggregation.
 		Tableau — Interactive dashboards and visual analytics.
-		Excel/CSV — Initial data profiling and quick checks.
+		Excel/CSV — Imported file used for initial data profiling and quick checks.
 SQL:
 						Cost-Conscious Care: Risk Analysis in the Patient Journey 
 	This project focuses on uncovering the financial risks and burdens faced by patients during their healthcare journey, with a particular emphasis on costs not covered by payers.
